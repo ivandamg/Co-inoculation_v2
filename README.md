@@ -29,3 +29,6 @@ Scripts used on the co-inoculation v2 project
             samtools sort -m4G -@4 -o Z17Hifireads_RefSuperZ17p_sorted.bam Z17Hifireads_RefSuperZ17p.sam
             samtools view -bq 30 Z17Hifireads_RefSuperZ17p_sorted.bam > Z17Hifireads_RefSuperZ17p_sorted_Q30.bam
             samtools index Z17Hifireads_RefSuperZ17p_sorted.bam
+
+5. Coverage analysis 
+
