@@ -3,13 +3,13 @@ Scripts used on the co-inoculation v2 project
 
 1. modify multifasta contig name
 
-      awk '(FNR==1){f="B1_";sub(/.[A-Za-z]$/,"_",f)}/^>/{$0=">" f substr($0,2)}1' B1_finalpurged_primary.fasta > B1_finalpurged_primary_v2.fna
-      awk '(FNR==1){f="DAOM197198_";sub(/.[A-Za-z]$/,"_",f)}/^>/{$0=">" f substr($0,2)}1' DAOM197198_Rhiir2.fna > DAOM197198_Rhiir2_v2.fna
+            awk '(FNR==1){f="B1_";sub(/.[A-Za-z]$/,"_",f)}/^>/{$0=">" f substr($0,2)}1' B1_finalpurged_primary.fasta > B1_finalpurged_primary_v2.fna
+            awk '(FNR==1){f="DAOM197198_";sub(/.[A-Za-z]$/,"_",f)}/^>/{$0=">" f substr($0,2)}1' DAOM197198_Rhiir2.fna > DAOM197198_Rhiir2_v2.fna
 
 1. Merge assemblies of DAOM and B1 to produce a reference template.
 
-      cat DAOM197198_Rhiir2_v2.fna > Merged_DAOM197198_B1.fna
-      cat B1_finalpurged_primary_v2.fna >> Merged_DAOM197198_B1.fna
+            cat DAOM197198_Rhiir2_v2.fna > Merged_DAOM197198_B1.fna
+            cat B1_finalpurged_primary_v2.fna >> Merged_DAOM197198_B1.fna
 
 2. Map reads with bbmap
 
