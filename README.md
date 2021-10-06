@@ -42,17 +42,8 @@ Scripts used on the co-inoculation v2 project
 
             /work/FAC/FBM/DEE/isanders/popgen_to_var/IM/ZZ_Soft/subread-2.0.3-source/bin/featureCounts -T 5 -a /work/FAC/FBM/DEE/isanders/popgen_to_var/IM/01_Coinoc_v2/00_GenomeAssemblies/Merged_DAOM197198_B1.gff -t exon -g ID -o Counts_COL2215.txt Unmapped_Mesculenta_COL2215_B1DAOM197198_1_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1DAOM197198_2_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1DAOM197198_3_mapped_MergedDAOM197198B1_Sorted_Q30.bam
           
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
 
 5. Coverage analysis 
 
+            module load gcc bedtools2
+            for i in $(ls *Q30.bam); do echo $i; bedtools genomecov -ibam $i -bga -split > $(echo $i | cut -d'_' -f3,4,5)_Covdetail.txt ; done
