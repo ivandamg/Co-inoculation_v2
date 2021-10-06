@@ -30,5 +30,29 @@ Scripts used on the co-inoculation v2 project
             samtools view -bq 30 Z17Hifireads_RefSuperZ17p_sorted.bam > Z17Hifireads_RefSuperZ17p_sorted_Q30.bam
             samtools index Z17Hifireads_RefSuperZ17p_sorted.bam
 
+
+5. FeatureCounts on chimer.
+
+1. merge GTF file of both isolates.
+
+            cat DAOM197198_Rhiir2_v2.gff > Merged_DAOM197198_B1.gff
+            cat Rhizophagus_irregularis_B1.gff3 | grep -v "#" >> Merged_DAOM197198_B1.gff
+            
+2. run feature counts 
+
+            /work/FAC/FBM/DEE/isanders/popgen_to_var/IM/ZZ_Soft/subread-2.0.3-source/bin/featureCounts -T 5 -a /work/FAC/FBM/DEE/isanders/popgen_to_var/IM/01_Coinoc_v2/00_GenomeAssemblies/Merged_DAOM197198_B1.gff -t exon -g ID -o Counts_COL2215.txt Unmapped_Mesculenta_COL2215_B1DAOM197198_1_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1DAOM197198_2_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1DAOM197198_3_mapped_MergedDAOM197198B1_Sorted_Q30.bam
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
 5. Coverage analysis 
 
