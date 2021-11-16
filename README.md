@@ -40,10 +40,13 @@ Scripts used on the co-inoculation v2 project
             
 2. run feature counts 
 
-            /work/FAC/FBM/DEE/isanders/popgen_to_var/IM/ZZ_Soft/subread-2.0.3-source/bin/featureCounts -T 5 -a /work/FAC/FBM/DEE/isanders/popgen_to_var/IM/01_Coinoc_v2/00_GenomeAssemblies/Merged_DAOM197198_B1.gff -t exon -g ID -o Counts_COL2215.txt Unmapped_Mesculenta_COL2215_B1DAOM197198_1_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1DAOM197198_2_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1DAOM197198_3_mapped_MergedDAOM197198B1_Sorted_Q30.bam -p --countReadPairs
+            /work/FAC/FBM/DEE/isanders/popgen_to_var/IM/ZZ_Soft/subread-2.0.3-source/bin/featureCounts -T 5 -a /work/FAC/FBM/DEE/isanders/popgen_to_var/IM/01_Coinoc_v2/00_GenomeAssemblies/Merged_DAOM197198_B1.gff -t exon -g ID -o Counts_COL2215.txt Unmapped_Mesculenta_COL2215_B1DAOM197198_1_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1DAOM197198_2_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1DAOM197198_3_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1_1_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1_2_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1_3_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_DAOM197198_1_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_DAOM197198_2_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_DAOM197198_3_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_Mock_1_mapped_MergedDAOM197198B1_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_Mock_2_mapped_MergedDAOM197198B1_Sorted_Q30.bam -p --countReadPairs
           
 
 6. Orthologs between B1 and DAOM annotation.
+
+Run orthologs analysis with orthofinder. then in excel identify wich are single-copy orthologs. 
+Do normal DE analysis and then look if they are orthologs. always compare amf1 amf2 vs Co-inoculation
 
 5. Coverage analysis 
 
