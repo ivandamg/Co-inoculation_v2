@@ -50,7 +50,11 @@ Scripts used on the co-inoculation v2 project
 Run orthologs analysis with orthofinder. then in excel identify wich are single-copy orthologs. 
 Do normal DE analysis and then look if they are orthologs. always compare amf1 amf2 vs Co-inoculation
 
-5. Coverage analysis 
+
+7. Then look DE genes with one reference. look at ortholog in other reference and check if they are also DE. If yes, it means that gene is activated in both isolates. If not it means that it is activated in a single-isolate.
+
+8. Can confirm this by looking at SNP in the co-inoculation. We should expect presence of both variants if expressed in both isolates.
+9. Coverage analysis 
 
             module load gcc bedtools2
             for i in $(ls *Q30.bam); do echo $i; bedtools genomecov -ibam $i -bga -split > $(echo $i | cut -d'_' -f3,4,5)_Covdetail.txt ; done
