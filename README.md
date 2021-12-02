@@ -7,6 +7,11 @@ Scripts used on the co-inoculation v2 project
 
             awk '(FNR==1){f="B1_";sub(/.[A-Za-z]$/,"_",f)}/^>/{$0=">" f substr($0,2)}1' B1_finalpurged_primary.fasta > B1_finalpurged_primary_v2.fna
             awk '(FNR==1){f="DAOM197198_";sub(/.[A-Za-z]$/,"_",f)}/^>/{$0=">" f substr($0,2)}1' DAOM197198_Rhiir2.fna > DAOM197198_Rhiir2_v2.fna
+            
+Change header of genome file only chromosome code
+
+            cat R_irregularis_DAOM197198_Kameoka.fna |sed 's/ Rhizophagus irregularis DAOM 181602=DAOM 197198 DNA, contig: unitig_*., whole genome shotgun sequence//' | sed 's/ Rhizophagus irregularis DAOM 181602=DAOM 197198 DNA, contig: unitig_*
+.., whole genome shotgun sequence//' | sed 's/ Rhizophagus irregularis DAOM 181602=DAOM 197198 DNA, contig: unitig_*..., whole genome shotgun sequence//' > R_irregularis_DAOM197198_Kameoka_v2.fna
 
 2. Merge assemblies of DAOM and B1 to produce a reference template.
 
