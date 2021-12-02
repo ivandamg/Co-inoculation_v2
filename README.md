@@ -45,6 +45,15 @@ Scripts used on the co-inoculation v2 project
             /work/FAC/FBM/DEE/isanders/popgen_to_var/IM/ZZ_Soft/subread-2.0.3-source/bin/featureCounts -T 8 -a /work/FAC/FBM/DEE/isanders/popgen_to_var/IM/01_Coinoc_v2/03_MappedDAOM/DAOM197198_Rhiir2_v2.gff -t CDS -g ID -o Counts_REFDAOM_COL2215.txt  Unmapped_Mesculenta_COL2215_B1DAOM197198_3_mapped_DAOM197198_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1_1_mapped_DAOM197198_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1_2_mapped_DAOM197198_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_B1_3_mapped_DAOM197198_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_DAOM197198_1_mapped_DAOM197198_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_DAOM197198_2_mapped_DAOM197198_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_DAOM197198_3_mapped_DAOM197198_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_Mock_1_mapped_DAOM197198_Sorted_Q30.bam Unmapped_Mesculenta_COL2215_Mock_2_mapped_DAOM197198_Sorted_Q30.bam -p --countReadPairs
           
 
+
+6. Call SNPs from RNA-seq BAM files
+
+             # Call SNP
+            module load Bioinformatics/Software/vital-it; module add UHTS/Analysis/freebayes/1.2.0; mkdir 03_SNP_Rhiir;
+            for i in $(ls *.bam); do echo $i; freebayes --fasta-reference DAOM.fa --report-monomorphic -C 10 -p 1 $i > 03_SNP_Rhiir_$(echo $i | cut -d'_' -f1,2,3,4,5).vcf; done
+
+            # Filter quality SNP Call
+
 6. Orthologs between B1 and DAOM annotation.
 
 Run orthologs analysis with orthofinder. then in excel identify wich are single-copy orthologs. 
